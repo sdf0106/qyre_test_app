@@ -1,9 +1,9 @@
 class ImagePaths {
   ImagePaths._();
 
-  static const firstProdImage = 'assets/images/raster/image_1.svg';
+  static const firstProdImage = 'assets/images/raster/image_1.jpg';
 
-  static const secondProdImage = 'assets/images/raster/image_2.svg';
+  static const secondProdImage = 'assets/images/raster/image_2.jpg';
 
   static const networkImage = 'assets/images/vector/network.svg';
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qyre_test_app/core/consts/image_paths.dart';
 
 import '../../../../config/theme/palette.dart';
 
@@ -23,15 +25,14 @@ class ProductionCard extends StatelessWidget {
               width: 70.0,
               margin: const EdgeInsets.only(right: 16.0),
               decoration: const BoxDecoration(
-                // image: DecorationImage(
-                //   image: AssetImage(''),
-                //   fit: BoxFit.cover,
-                // ),
+                image: DecorationImage(
+                  image: AssetImage(ImagePaths.firstProdImage),
+                  fit: BoxFit.cover,
+                ),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(4.0),
                   bottomLeft: Radius.circular(4.0),
                 ),
-                color: Palette.red,
               ),
             ),
             RichText(
