@@ -10,7 +10,8 @@ class QyreBottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      backgroundColor: Colors.black,
+      selectedItemColor: Theme.of(context).colorScheme.onSurface,
+      backgroundColor: Theme.of(context).colorScheme.onBackground,
       items: const [
         BottomNavigationBarItem(
           label: 'Home',

@@ -8,8 +8,8 @@ class AppTheme {
   static get appTheme => ThemeData(
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
-          primary: Palette.white,
-          onPrimary: Palette.black100,
+          primary: Palette.black100,
+          onPrimary: Palette.red,
           secondary: Palette.blueFaded,
           onSecondary: Palette.black100,
           error: Palette.red,

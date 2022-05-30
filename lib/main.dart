@@ -6,9 +6,11 @@ import 'package:flutter/material.dart';
 
 import 'config/app.dart';
 import 'config/bloc/bloc_observer.dart';
+import 'injection.dart';
 
 Future<void> main() async => runZonedGuarded(
       () {
+        configureDependencies();
         BlocOverrides.runZoned(
           () => runApp(const QyreTestApp()),
           blocObserver: AppBlocObserver(),
