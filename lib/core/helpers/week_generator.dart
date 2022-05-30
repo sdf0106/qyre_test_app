@@ -1,6 +1,7 @@
 import 'package:qyre_test_app/features/availability/domain/entities/day.dart';
 
 class WeekGenerator {
+  WeekGenerator._();
   static Iterable<Day> weekGenerator(DateTime day) sync* {
     bool? isAvailable(int index) {
       if (index == 0 || index == 4) {

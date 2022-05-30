@@ -4,7 +4,7 @@ part 'day.freezed.dart';
 
 @freezed
 class Day with _$Day {
-  factory Day({
+  const factory Day({
     required DateTime dateTime,
     bool? isAvailable,
   }) = _Day;

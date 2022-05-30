@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qyre_test_app/core/consts/image_paths.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../config/theme/palette.dart';
 
 class ProductionCard extends StatelessWidget {
+  final String productName;
+  final String imagePath;
+  final String location;
+  final DateTime startTime;
+  final DateTime endTime;
   const ProductionCard({
     Key? key,
+    required this.productName,
+    required this.imagePath,
+    required this.location,
+    required this.startTime,
+    required this.endTime,
   }) : super(key: key);
 
   @override
@@ -21,34 +30,8 @@ class ProductionCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Container(
-              width: 70.0,
-              margin: const EdgeInsets.only(right: 16.0),
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(ImagePaths.firstProdImage),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(4.0),
-                  bottomLeft: Radius.circular(4.0),
-                ),
-              ),
-            ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: 'Production Name That is Long\n',
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  TextSpan(
-                    text: 'Sweden Jan 14, 2022 - Feb 23, 2023',
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                ],
-              ),
-            ),
+            _imageContainer(imagePath),
+            _productionDescription(context),
             Expanded(
               child: Container(
                 margin: const EdgeInsets.only(right: 15.0),
@@ -62,6 +45,48 @@ class ProductionCard extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  SingleChildScrollView _productionDescription(
+    BuildContext context,
+  ) {
+    final formatter = DateFormat('MMM d, yyyy');
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      physics: const NeverScrollableScrollPhysics(),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: '$productName \n',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            TextSpan(
+              text:
+                  '$location ${formatter.format(startTime)} - ${formatter.format(endTime)}',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container _imageContainer(String imagePath) {
+    return Container(
+      width: 70.0,
+      margin: const EdgeInsets.only(right: 16.0),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(4.0),
+          bottomLeft: Radius.circular(4.0),
         ),
       ),
     );

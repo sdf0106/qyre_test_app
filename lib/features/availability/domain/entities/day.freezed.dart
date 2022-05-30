@@ -94,7 +94,7 @@ class __$$_DayCopyWithImpl<$Res> extends _$DayCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Day implements _Day {
-  _$_Day({required this.dateTime, this.isAvailable});
+  const _$_Day({required this.dateTime, this.isAvailable});
 
   @override
   final DateTime dateTime;
@@ -129,8 +129,8 @@ class _$_Day implements _Day {
 }
 
 abstract class _Day implements Day {
-  factory _Day({required final DateTime dateTime, final bool? isAvailable}) =
-      _$_Day;
+  const factory _Day(
+      {required final DateTime dateTime, final bool? isAvailable}) = _$_Day;
 
   @override
   DateTime get dateTime => throw _privateConstructorUsedError;
