@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     return BlocProvider(
       create: (_) => ExtendingAppBarCubit(),
       child: Scaffold(
-        // backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.background,
         body: Stack(children: const [
           HomeScrollableView(),
           QyreAppBar(),

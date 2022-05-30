@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../config/theme/palette.dart';
 import '../cubit/extending_app_bar_cubit.dart';
 
 class QyreAppBar extends StatelessWidget {
@@ -13,14 +14,11 @@ class QyreAppBar extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          color: Colors.white.withOpacity(0.7),
+          color: Palette.white.withOpacity(0.7),
           padding: const EdgeInsets.fromLTRB(14.0, 64.0, 0.0, 14.0),
-          child: const Text(
+          child: Text(
             'My Availability',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18.0,
-            ),
+            style: Theme.of(context).textTheme.headline1,
           ),
         ),
         const _AppBarContent(),
