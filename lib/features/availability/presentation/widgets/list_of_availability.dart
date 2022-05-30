@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qyre_test_app/features/availability/presentation/widgets/day_container_extended.dart/day_container_extended.dart';
+import 'package:qyre_test_app/features/availability/presentation/widgets/day_container_extended/day_container_extended.dart';
 
 import '../../../../config/theme/palette.dart';
 import '../../domain/blocs/availability/availability_bloc.dart';
