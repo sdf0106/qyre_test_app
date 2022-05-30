@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qyre_test_app/features/availability/presentation/widgets/day_container_extended/day_container_extended.dart';
 
 import '../../../../config/theme/palette.dart';
+import '../../../../core/widgets.dart/circular_progress_indicator.dart';
+import '../../../../core/widgets.dart/error_text.dart';
 import '../../domain/blocs/availability/availability_bloc.dart';
 import '../../domain/entities/day.dart';
 
@@ -16,23 +18,13 @@ class ListOfAvailability extends StatelessWidget {
       builder: (context, state) {
         state.maybeWhen(
           loading: () {
-            widget = Center(
-              child: CircularProgressIndicator(
-                color: Theme.of(context).colorScheme.primary,
-              ),
-            );
+            widget = const QyreCircularProgressIndicator();
           },
           availabilityGotten: (List<Day> days) {
             widget = _getList(days);
           },
-          failure: (String error) {
-            widget = Text(
-              error,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline2?.copyWith(
-                    color: Palette.red,
-                  ),
-            );
+          failure: (String errorText) {
+            widget = ErrorText(text: errorText);
           },
           orElse: () {
             widget = Text(

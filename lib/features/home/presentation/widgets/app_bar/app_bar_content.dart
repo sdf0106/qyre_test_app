@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qyre_test_app/core/widgets.dart/error_text.dart';
 
 import '../../../../../config/theme/palette.dart';
+import '../../../../../core/widgets.dart/circular_progress_indicator.dart';
 import '../../../../availability/domain/blocs/availability/availability_bloc.dart';
 import '../../../../availability/domain/entities/day.dart';
 import '../../../../availability/presentation/widgets/day_container_reduced/day_container_reduced.dart';
@@ -42,7 +44,7 @@ class _AppBarContentBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     late Widget widget;
-    bool extended = value != 0.0 ? true : false;
+
     return Container(
       height: value,
       color: Colors.white.withOpacity(0.7),
@@ -51,22 +53,13 @@ class _AppBarContentBuilder extends StatelessWidget {
         builder: (context, state) {
           state.maybeWhen(
             loading: () {
-              widget = Center(
-                child: CircularProgressIndicator(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              );
+              widget = const QyreCircularProgressIndicator();
             },
             availabilityGotten: (List<Day> days) {
-              widget = getList(days, extended);
+              widget = getList(days);
             },
-            failure: (String message) {
-              widget = Text(
-                message,
-                style: Theme.of(context).textTheme.headline2?.copyWith(
-                      color: Palette.red,
-                    ),
-              );
+            failure: (String errorText) {
+              widget = ErrorText(text: errorText);
             },
             orElse: () {
               widget = const Text(
@@ -81,7 +74,7 @@ class _AppBarContentBuilder extends StatelessWidget {
     );
   }
 
-  ListView getList(List<Day> days, bool extended) => ListView(
+  ListView getList(List<Day> days) => ListView(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
@@ -90,7 +83,6 @@ class _AppBarContentBuilder extends StatelessWidget {
             DayContainerReduced(
               dateTime: days[i].dateTime,
               isAvailable: days[i].isAvailable,
-              extended: extended,
             ),
             const SizedBox(width: 8.0),
           ],

@@ -8,35 +8,35 @@ import '../dot_indicator/dot_indicator.dart';
 class DayContainerReduced extends StatelessWidget {
   final DateTime dateTime;
   bool? isAvailable;
-  final bool extended;
+
   DayContainerReduced({
     Key? key,
     required this.dateTime,
     this.isAvailable,
-    required this.extended,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: extended ? 36.0 : 0.0,
-      padding: const EdgeInsets.symmetric(horizontal: 11.0),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
-        borderRadius: BorderRadius.circular(4.0),
+    return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
+      child: Container(
+        height: 36.0,
+        padding: const EdgeInsets.symmetric(horizontal: 11.0),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _WeekDay(day: dateTime),
+            _Date(
+              date: dateTime,
+              isAvailable: isAvailable,
+            ),
+          ],
+        ),
       ),
-      child: extended
-          ? Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _WeekDay(day: dateTime),
-                _Date(
-                  date: dateTime,
-                  isAvailable: isAvailable,
-                ),
-              ],
-            )
-          : const SizedBox(),
     );
   }
 }
