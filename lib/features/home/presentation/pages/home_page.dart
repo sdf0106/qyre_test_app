@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qyre_test_app/features/availability/domain/blocs/availability/availability_bloc.dart';
 import 'package:qyre_test_app/features/availability/presentation/widgets/list_of_availability.dart';
 import 'package:qyre_test_app/features/suggestions/presentation/widgets/suggestion_elements/suggestions_list.dart';
+import 'package:qyre_test_app/features/tabs/presentation/tabs.dart';
 import 'package:qyre_test_app/injection.dart';
 
-import '../../../../config/theme/palette.dart';
 import '../../../productions/presentation/widgets/production_cards_list.dart';
 import '../cubit/extending_app_bar_cubit.dart';
 import '../widgets/app_bar/app_bar.dart';
@@ -85,12 +85,12 @@ class _HomeScrollableViewState extends State<HomeScrollableView> {
       physics: const BouncingScrollPhysics(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          const SizedBox(height: 120.0),
-          const ListOfAvailability(),
-          const SuggestionsList(),
-          const ProductCardsList(),
+        children: const [
+          SizedBox(height: 120.0),
+          ListOfAvailability(),
+          SuggestionsList(),
+          ProductCardsList(),
+          Tabs(),
         ],
       ),
     );
