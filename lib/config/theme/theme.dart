@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 
+import 'palette.dart';
+
 class AppTheme {
   AppTheme._();
 
   static final appTheme = ThemeData(
-    colorScheme: const ColorScheme(
+    // ignore: prefer_const_constructors
+    colorScheme: ColorScheme(
       brightness: Brightness.light,
-      primary: Colors.white,
-      onPrimary: Colors.white,
-      secondary: Colors.white,
-      onSecondary: Colors.white,
-      error: Colors.white,
-      onError: Colors.white,
-      background: Colors.black,
-      onBackground: Colors.white,
-      surface: Colors.white,
-      onSurface: Colors.white,
+      primary: Palette.white,
+      onPrimary: Palette.black100,
+      secondary: Palette.blueFaded,
+      onSecondary: Palette.black100,
+      error: Palette.red,
+      onError: Palette.red,
+      background: Palette.white,
+      onBackground: Palette.black100,
+      surface: Palette.gray100,
+      onSurface: Palette.white,
     ),
     textTheme: const TextTheme(),
   );
