@@ -35,19 +35,22 @@ class SuggestionsList extends StatelessWidget {
             ),
         ),
       ],
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        child: Wrap(
-          children: const [
-            SizedBox(width: 16.0),
-            _ProfileCompletionSuggestion(),
-            SizedBox(width: 10.0),
-            _GetNetwork(),
-            SizedBox(width: 16.0),
-            _GetCapabilityVerification(),
-            SizedBox(width: 16.0),
-          ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20.0),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          child: Wrap(
+            children: const [
+              SizedBox(width: 16.0),
+              _ProfileCompletionSuggestion(),
+              SizedBox(width: 10.0),
+              _GetNetwork(),
+              SizedBox(width: 16.0),
+              _GetCapabilityVerification(),
+              SizedBox(width: 16.0),
+            ],
+          ),
         ),
       ),
     );
