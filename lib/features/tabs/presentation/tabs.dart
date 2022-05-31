@@ -11,7 +11,6 @@ class Tabs extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TabContainer(
             imagePath: ImagePaths.networkImage,
@@ -20,6 +19,7 @@ class Tabs extends StatelessWidget {
             gradient: Palette.gradientBlue,
             onPressed: () {},
           ),
+          const SizedBox(width: 10.0),
           TabContainer(
             imagePath: ImagePaths.qyreImage,
             title: 'Quick hire',
@@ -27,6 +27,7 @@ class Tabs extends StatelessWidget {
             gradient: Palette.gradientRed,
             onPressed: () {},
           ),
+          const SizedBox(width: 10.0),
           TabContainer(
             imagePath: ImagePaths.networkImage,
             title: 'My CV',

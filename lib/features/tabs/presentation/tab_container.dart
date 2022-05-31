@@ -25,7 +25,7 @@ class TabContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(4.0),
         child: Ink(
           height: 140.0,
-          width: 110.0,
+          width: MediaQuery.of(context).size.width * 0.28,
           padding: const EdgeInsets.only(top: 17.0, left: 12.0, right: 12.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4.0),
