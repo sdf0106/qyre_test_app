@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qyre_test_app/core/widgets.dart/error_text.dart';
 
-import '../../../../../config/theme/palette.dart';
 import '../../../../../core/widgets.dart/circular_progress_indicator.dart';
 import '../../../../availability/domain/blocs/availability/availability_bloc.dart';
 import '../../../../availability/domain/entities/day.dart';

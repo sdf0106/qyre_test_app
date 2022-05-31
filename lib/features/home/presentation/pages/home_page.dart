@@ -11,7 +11,7 @@ import '../../../productions/presentation/widgets/production_cards_list.dart';
 import '../../../starred_posts/widgets/starred_posts_content.dart';
 import '../cubit/extending_app_bar_cubit.dart';
 import '../widgets/app_bar/app_bar.dart';
-import '../widgets/bottom_navigation_bar.dart';
+import '../widgets/bottom_navigation_bar/bottom_navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,10 +31,10 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
         body: Stack(
-          children: const [
-            HomeScrollableView(),
-            QyreAppBar(),
-          ],
+          children: [
+            QyreAppBar(setWidth: MediaQuery.of(context).size.width),
+            const HomeScrollableView(),
+          ].reversed.toList(),
         ),
         bottomNavigationBar: const QyreBottomNavigationBar(),
       ),

@@ -36,6 +36,7 @@ flutter:
   assets:
     - assets/images/raster/
     - assets/images/vector/
+    - assets/icons/
 
   fonts:
     - family: Matter

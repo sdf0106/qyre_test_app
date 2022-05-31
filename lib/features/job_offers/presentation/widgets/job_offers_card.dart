@@ -35,7 +35,6 @@ class JobOffersCard extends StatelessWidget {
               children: [
                 SizedBox(
                   width: 250,
-                   
                   child: Text(
                     'Job offers are shown here!\n Keep your profile updated to stay relevant for new opportunities.',
                     style: Theme.of(context).textTheme.bodyText2,
