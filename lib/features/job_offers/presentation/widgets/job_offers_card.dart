@@ -16,7 +16,7 @@ class JobOffersCard extends StatelessWidget {
       onTap: () {},
       child: Ink(
         height: 128.0,
-        padding: const EdgeInsets.fromLTRB(16.0, 16.0, 0.0, 20.0),
+        padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 20.0),
         decoration: BoxDecoration(
           color: Palette.gray25,
           borderRadius: BorderRadius.circular(4.0),
@@ -31,16 +31,14 @@ class JobOffersCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                Container(
+                  padding: const EdgeInsets.only(right: 16.0),
                   width: 250.0,
-                  child: Flexible(
-                    child: Text(
-                      'Job offers are shown here! Keep your profile updated to stay relevant for new opportunities.',
-                      style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                      maxLines: 4,
-                    ),
+                  child: Text(
+                    'Job offers are shown here!\nKeep your profile updated to stay relevant for new opportunities.',
+                    style: Theme.of(context).textTheme.bodyText2,
+                    maxLines: 4,
+                    overflow: TextOverflow.fade,
                   ),
                 ),
                 Row(
