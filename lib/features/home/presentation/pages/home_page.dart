@@ -6,6 +6,7 @@ import 'package:qyre_test_app/features/suggestions/presentation/widgets/suggesti
 import 'package:qyre_test_app/features/tabs/presentation/tabs.dart';
 import 'package:qyre_test_app/injection.dart';
 
+import '../../../job_offers/presentation/widgets/job_offers_content.dart';
 import '../../../productions/presentation/widgets/production_cards_list.dart';
 import '../cubit/extending_app_bar_cubit.dart';
 import '../widgets/app_bar/app_bar.dart';
@@ -91,6 +92,7 @@ class _HomeScrollableViewState extends State<HomeScrollableView> {
           SuggestionsList(),
           ProductCardsList(),
           Tabs(),
+          JobOffersContent(),
         ],
       ),
     );
