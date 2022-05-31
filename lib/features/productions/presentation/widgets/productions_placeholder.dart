@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qyre_test_app/core/consts/image_paths.dart';
+import '../../../../core/consts/image_paths.dart';
 
 import '../../../../config/theme/palette.dart';
 

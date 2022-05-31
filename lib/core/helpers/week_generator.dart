@@ -1,4 +1,4 @@
-import 'package:qyre_test_app/features/availability/domain/entities/day.dart';
+import '../../features/availability/domain/entities/day.dart';
 
 class WeekGenerator {
   WeekGenerator._();

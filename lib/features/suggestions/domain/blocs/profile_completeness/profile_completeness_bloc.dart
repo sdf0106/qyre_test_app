@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:qyre_test_app/features/suggestions/domain/repository/suggestion_repository.dart';
+import '../../repository/suggestion_repository.dart';
 
 part 'profile_completeness_event.dart';
 part 'profile_completeness_state.dart';

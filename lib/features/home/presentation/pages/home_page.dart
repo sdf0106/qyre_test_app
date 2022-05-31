@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qyre_test_app/features/availability/domain/blocs/availability/availability_bloc.dart';
-import 'package:qyre_test_app/features/availability/presentation/widgets/list_of_availability.dart';
-import 'package:qyre_test_app/features/suggestions/presentation/widgets/suggestion_elements/suggestions_list.dart';
-import 'package:qyre_test_app/features/tabs/presentation/tabs.dart';
-import 'package:qyre_test_app/injection.dart';
+import '../../../availability/domain/blocs/availability/availability_bloc.dart';
+import '../../../availability/presentation/widgets/list_of_availability.dart';
+import '../../../suggestions/presentation/widgets/suggestion_elements/suggestions_list.dart';
+import '../../../tabs/presentation/tabs.dart';
+import '../../../../injection.dart';
 
 import '../../../job_offers/presentation/widgets/job_offers_content.dart';
 import '../../../productions/presentation/widgets/production_cards_list.dart';

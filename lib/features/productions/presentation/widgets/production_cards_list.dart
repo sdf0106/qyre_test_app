@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qyre_test_app/core/widgets.dart/circular_progress_indicator.dart';
-import 'package:qyre_test_app/core/widgets.dart/error_text.dart';
-import 'package:qyre_test_app/features/productions/presentation/widgets/production_card.dart';
-import 'package:qyre_test_app/features/productions/presentation/widgets/productions_placeholder.dart';
+import '../../../../core/widgets.dart/circular_progress_indicator.dart';
+import '../../../../core/widgets.dart/error_text.dart';
+import 'production_card.dart';
+import 'productions_placeholder.dart';
 
 import '../../../../injection.dart';
 import '../../domain/blocs/bloc/get_productions_bloc.dart';

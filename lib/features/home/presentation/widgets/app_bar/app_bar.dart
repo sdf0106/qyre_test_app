@@ -3,7 +3,6 @@ import 'dart:ui' as UI;
 import 'package:flutter/material.dart';
 
 import '../../../../../config/theme/palette.dart';
-
 import 'app_bar_content.dart';
 
 class QyreAppBar extends StatelessWidget {

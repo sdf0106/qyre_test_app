@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:qyre_test_app/features/availability/presentation/widgets/dot_indicator/dot_indicator.dart';
+import '../dot_indicator/dot_indicator.dart';
 
 import '../../../../../config/theme/palette.dart';
 // ignore_for_file: must_be_immutable

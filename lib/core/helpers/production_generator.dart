@@ -1,4 +1,4 @@
-import 'package:qyre_test_app/features/productions/domain/entities/production.dart';
+import '../../features/productions/domain/entities/production.dart';
 
 import '../consts/image_paths.dart';
 

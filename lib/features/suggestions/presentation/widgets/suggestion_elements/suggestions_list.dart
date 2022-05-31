@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qyre_test_app/core/widgets.dart/error_text.dart';
-import 'package:qyre_test_app/features/suggestions/domain/blocs/profile_completeness/profile_completeness_bloc.dart';
-import 'package:qyre_test_app/features/suggestions/presentation/widgets/suggestion_elements/suggestion_card.dart';
-import 'package:qyre_test_app/injection.dart';
+import '../../../../../core/widgets.dart/error_text.dart';
+import '../../../domain/blocs/profile_completeness/profile_completeness_bloc.dart';
+import 'suggestion_card.dart';
+import '../../../../../injection.dart';
 
 import '../../../../../core/widgets.dart/circular_progress_indicator.dart';
 import '../../../domain/blocs/capability_verification/capability_verification_bloc.dart';

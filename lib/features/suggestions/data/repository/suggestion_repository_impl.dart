@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
-import 'package:qyre_test_app/core/errors/failures.dart';
+import '../../../../core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:qyre_test_app/features/suggestions/domain/repository/suggestion_repository.dart';
+import '../../domain/repository/suggestion_repository.dart';
 
 @Injectable(as: SuggestionRepository)
 class SuggestionRepositoryImpl implements SuggestionRepository {

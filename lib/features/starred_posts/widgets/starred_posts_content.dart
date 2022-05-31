@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qyre_test_app/features/starred_posts/widgets/starred_posts_placeholder.dart';
+import 'starred_posts_placeholder.dart';
 
 
 class StarredPostsContent extends StatelessWidget {

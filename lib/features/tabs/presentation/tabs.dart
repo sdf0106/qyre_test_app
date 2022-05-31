@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qyre_test_app/config/theme/palette.dart';
-import 'package:qyre_test_app/core/consts/image_paths.dart';
-import 'package:qyre_test_app/features/tabs/presentation/tab_container.dart';
+import '../../../config/theme/palette.dart';
+import '../../../core/consts/image_paths.dart';
+import 'tab_container.dart';
 
 class Tabs extends StatelessWidget {
   const Tabs({Key? key}) : super(key: key);

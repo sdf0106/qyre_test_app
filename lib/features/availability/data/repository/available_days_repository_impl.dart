@@ -1,9 +1,10 @@
-import 'package:injectable/injectable.dart';
-import 'package:qyre_test_app/core/helpers/week_generator.dart';
-import 'package:qyre_test_app/features/availability/domain/entities/day.dart';
-import 'package:qyre_test_app/core/errors/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:qyre_test_app/features/availability/domain/repository/available_days_repository.dart';
+import 'package:injectable/injectable.dart';
+
+import '../../../../core/errors/failures.dart';
+import '../../../../core/helpers/week_generator.dart';
+import '../../domain/entities/day.dart';
+import '../../domain/repository/available_days_repository.dart';
 
 @Injectable(as: AvailableDaysRepository)
 class AvailableDaysRepositoryImpl implements AvailableDaysRepository {
