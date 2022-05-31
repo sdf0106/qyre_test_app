@@ -11,8 +11,8 @@ class JobOffersCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String description =
-        'Job offers are shown here! Keep your profile updated to stay relevant for new opportunities.';
+    // String description =
+    //     'Job offers are shown here! Keep your profile updated to stay relevant for new opportunities.';
     return InkWell(
       borderRadius: BorderRadius.circular(4.0),
       onTap: () {},
@@ -33,11 +33,13 @@ class JobOffersCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Flexible(
+                SizedBox(
+                  width: 250,
+                   
                   child: Text(
-                    description,
-                    style: Theme.of(context).textTheme.headline6,
-                    maxLines: 4,
+                    'Job offers are shown here!\n Keep your profile updated to stay relevant for new opportunities.',
+                    style: Theme.of(context).textTheme.bodyText2,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
@@ -50,6 +52,7 @@ class JobOffersCard extends StatelessWidget {
                     const SizedBox(width: 6.0),
                     Icon(
                       Icons.arrow_forward_ios_rounded,
+                      size: 15.0,
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ],
