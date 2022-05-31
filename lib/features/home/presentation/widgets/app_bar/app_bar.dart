@@ -1,4 +1,4 @@
-import 'dart:ui' as UI;
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class QyreAppBar extends StatelessWidget {
       children: [
         ClipRect(
           child: BackdropFilter(
-            filter: UI.ImageFilter.blur(
+            filter: ui.ImageFilter.blur(
               sigmaX: 15.0,
               sigmaY: 15.0,
             ),
@@ -39,7 +39,7 @@ class QyreAppBar extends StatelessWidget {
         ),
         ClipRect(
           child: BackdropFilter(
-            filter: UI.ImageFilter.blur(
+            filter: ui.ImageFilter.blur(
               sigmaX: 15.0,
               sigmaY: 15.0,
             ),

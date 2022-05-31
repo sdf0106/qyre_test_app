@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../core/consts/image_paths.dart';
-
-import '../../../../config/theme/palette.dart';
 import 'job_offers_card.dart';
 
 class JobOffersContent extends StatelessWidget {
