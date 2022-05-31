@@ -24,24 +24,23 @@ class ProductionCard extends StatelessWidget {
       onTap: () {},
       child: Ink(
         height: 70.0,
+        padding: const EdgeInsets.only(right: 15.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4.0),
           color: Palette.gray25,
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
             _imageContainer(imagePath),
             _productionDescription(context),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(right: 15.0),
-                alignment: Alignment.centerRight,
-                height: 20.0,
-                width: 20.0,
-                child: const Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 15.0,
-                ),
+            Container(
+              alignment: Alignment.centerRight,
+              height: 20.0,
+              width: 20.0,
+              child: const Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 15.0,
               ),
             ),
           ],
@@ -50,13 +49,11 @@ class ProductionCard extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView _productionDescription(
+  Flexible _productionDescription(
     BuildContext context,
   ) {
     final formatter = DateFormat('MMM d, yyyy');
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      physics: const NeverScrollableScrollPhysics(),
+    return Expanded(
       child: RichText(
         text: TextSpan(
           children: [
@@ -67,7 +64,9 @@ class ProductionCard extends StatelessWidget {
             TextSpan(
               text:
                   '$location ${formatter.format(startTime)} - ${formatter.format(endTime)}',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headline6!.copyWith(
+                    overflow: TextOverflow.ellipsis,
+                  ),
             ),
           ],
         ),
