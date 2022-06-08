@@ -145,13 +145,11 @@ class _GetCapabilityVerification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late Widget widget;
     return BlocBuilder<CapabilityVerificationBloc, CapabilityVerificationState>(
       builder: (context, state) {
-        state.maybeWhen(
-          loading: () {},
+        return state.maybeWhen(
           canVerify: (status) {
-            widget = SuggestionCard(
+            return SuggestionCard(
               text: 'Get verified as an industry professional.',
               buttonText: 'Get verified',
               hasPercentageIndicator: !status,
@@ -159,17 +157,14 @@ class _GetCapabilityVerification extends StatelessWidget {
             );
           },
           failure: (String errorText) {
-            widget = ErrorText(text: errorText);
+            return ErrorText(text: errorText);
           },
           orElse: () {
-            widget = Text(
-              'No People to suggest',
-              style: Theme.of(context).textTheme.bodyText1,
+            return const ErrorText(
+              text: 'No People to suggest',
             );
           },
         );
-
-        return widget;
       },
     );
   }

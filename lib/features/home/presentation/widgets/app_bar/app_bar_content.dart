@@ -42,32 +42,29 @@ class _AppBarContentBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late Widget widget;
-
     return Container(
       height: value,
       color: Colors.white.withOpacity(0.7),
       padding: const EdgeInsets.only(bottom: 10.0),
       child: BlocBuilder<AvailabilityBloc, AvailabilityState>(
         builder: (context, state) {
-          state.maybeWhen(
+          return state.maybeWhen(
             loading: () {
-              widget = const QyreCircularProgressIndicator();
+              return const QyreCircularProgressIndicator();
             },
             availabilityGotten: (List<Day> days) {
-              widget = getList(days);
+              return getList(days);
             },
             failure: (String errorText) {
-              widget = ErrorText(text: errorText);
+              return ErrorText(text: errorText);
             },
             orElse: () {
-              widget = const Text(
+              return const Text(
                 'error',
                 textAlign: TextAlign.center,
               );
             },
           );
-          return widget;
         },
       ),
     );

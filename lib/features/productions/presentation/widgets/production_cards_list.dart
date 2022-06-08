@@ -46,24 +46,22 @@ class _ProductCardListContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late Widget widget;
     return BlocBuilder<GetProductionsBloc, GetProductionsState>(
       builder: (context, state) {
-        state.maybeWhen(
+        return state.maybeWhen(
           loading: () {
-            widget = const QyreCircularProgressIndicator();
+            return const QyreCircularProgressIndicator();
           },
           productsGotten: (List<Production> prods) {
-            widget = _listProvider(prods);
+            return _listProvider(prods);
           },
           failure: (String errorMessage) {
-            widget = ErrorText(text: errorMessage);
+            return ErrorText(text: errorMessage);
           },
           orElse: () {
-            widget = const PoductionsPlaceHolder();
+            return const PoductionsPlaceHolder();
           },
         );
-        return widget;
       },
     );
   }
