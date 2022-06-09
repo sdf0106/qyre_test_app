@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/widgets.dart/error_text.dart';
+import '../../../../../core/widgets/error_text.dart';
 
-import '../../../../../core/widgets.dart/circular_progress_indicator.dart';
+import '../../../../../core/widgets/circular_progress_indicator.dart';
 import '../../../../availability/domain/blocs/availability/availability_bloc.dart';
 import '../../../../availability/domain/entities/day.dart';
 import '../../../../availability/presentation/widgets/day_container_reduced/day_container_reduced.dart';

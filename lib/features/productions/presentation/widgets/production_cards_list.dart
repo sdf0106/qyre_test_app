@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/widgets.dart/circular_progress_indicator.dart';
-import '../../../../core/widgets.dart/error_text.dart';
+import '../../../../core/widgets/circular_progress_indicator.dart';
+import '../../../../core/widgets/error_text.dart';
 import 'production_card.dart';
 import 'productions_placeholder.dart';
 
